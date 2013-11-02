@@ -12,12 +12,16 @@ echo ""
 echo "---------------------------------------------------------------------------"
 echo "---------------------------------------------------------------------------"
 echo ""
-echo "Now you can use rvm command to install ruby"
+echo "Install Readline..."
+rvm pkg install readline
 echo ""
-echo "source ~/.bashrc"
-echo "rvm pkg install readline"
-echo "rvm install 2.0.0"
-echo "rvm use 2.0.0 --default"
+echo "Install Ruby 1.9.3..."
+rvm install 1.9.3
+rvm use 1.9.3 --default
 echo ""
-echo ""
-echo ""
+gem sources --remove https://rubygems.org/
+gem sources -a http://ruby.taobao.org/
+echo "Install bundler"
+gem install bundler
+echo 'install: --no-rdoc --no-ri' >> ~/.gemrc
+echo 'update:  --no-rdoc --no-ri' >> ~/.gemrc
