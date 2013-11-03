@@ -1,5 +1,5 @@
 ./install_packages
-./install_ruby
+./install_rvm
 ./install_nodejs
 ./install_nginx
 ./install_postgres
