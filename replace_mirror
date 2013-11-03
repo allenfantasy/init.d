@@ -1,0 +1,1 @@
+sed -i 's!hk.archive.ubuntu.com!mirrors.163.com!' /etc/apt/sources.list 
