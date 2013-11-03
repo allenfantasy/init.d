@@ -10,3 +10,4 @@ rm -Rf /tmp/nginx-$VERSION/
 cd $DIR
 sudo cp nginx /etc/init.d/
 sudo update-rc.d nginx defaults
+#sudo cp cfg/nginx.conf /usr/local/nginx/conf
