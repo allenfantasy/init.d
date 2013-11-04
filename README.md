@@ -8,40 +8,37 @@
       \/_____/\/_/\/_/\/_/\/__/\/_/\/__,_ /
 ```
 
-Batch scripts for Ruby production environment install on Ubuntu Server.
+#### 配置新机过程：
 
-## Requirements
 
-* Ubuntu Server 12.04
-
-## Usage
-
-Install packages first
+[ 用root登入  非root用户要加sudo ]
 
 ```bash
-$ ./install_packages
+adduser deployer —ingroup sudo
+apt-get install openssh-server
 ```
 
-### Install MongoDB
+[ 用deployer登入 ]
 
-```bash
-$ ./install_mongodb
+```
+sudo apt-get install git
+git clone https://github.com/allenfantasy/init.d.git
+cd ./init.d
+./install_dev_env                             # 如果这一步速度很慢，则执行./replace_mirrors，再重新运行该指令
+source ~/.bashrc
+./install_ruby
+rvm use 1.9.3 --default
+./install_ruby
+ssh-keygen -t rsa -C "dev@dongxi.example.com" # 然后按3次回车
+more .ssh/id_rsa.pub                          # 得到key后在github账号设定中Add Key
+ssh -T git@github.com                         # => Hi xxx! ...
 ```
 
-### Install Redis
+设定postgres的账号密码（例子中用户blog，数据库blog_production）
 
-```bash
-$ ./install_redis
 ```
-
-### Install Node.JS
-
-```bash
-$ ./install_nodejs
-```
-
-### Install Ruby by RVM
-
-```bash
-$ ./install_rvm
+sudo -u postgres sql
+postgres=# create user blog with password 'secret'; 
+postgres=# ALTER USER blog WITH SUPERUSER;
+postgres=# create database blog_production owner blog;
 ```
