@@ -8,6 +8,6 @@ echo ""
 gem sources --remove https://rubygems.org/
 gem sources -a http://ruby.taobao.org/
 echo "Install bundler"
-gem install bundler
+gem install bundler --no-rdoc --no-ri
 echo 'install: --no-rdoc --no-ri' >> ~/.gemrc
 echo 'update:  --no-rdoc --no-ri' >> ~/.gemrc
