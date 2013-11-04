@@ -20,7 +20,7 @@ apt-get install openssh-server
 
 [ 用deployer登入 ]
 
-```
+```bash
 sudo apt-get install git
 git clone https://github.com/allenfantasy/init.d.git
 cd ./init.d
