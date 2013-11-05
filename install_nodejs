@@ -1,12 +1,15 @@
-VERSION="0.10.15"
-echo "------------------------------------------------------------------------"
-echo "Now install Node.js $VERSION..."
-curl -O http://nodejs.org/dist/v$VERSION/node-v$VERSION.tar.gz
-tar zxf node-v$VERSION.tar.gz
-cd node-v$VERSION
-./configure
-rm node-v$VERSION.tar.gz
-rm -R node-v$VERSION
-make && sudo make install
+#VERSION="0.10.15"
+#echo "------------------------------------------------------------------------"
+#echo "Now install Node.js $VERSION..."
+#curl -O http://nodejs.org/dist/v$VERSION/node-v$VERSION.tar.gz
+#tar zxf node-v$VERSION.tar.gz
+#cd node-v$VERSION
+#./configure
+#rm node-v$VERSION.tar.gz
+#rm -R node-v$VERSION
+#make && sudo make install
+echo "Now install Node.js..."
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get install nodejs
 echo "Node.js install done."
 echo "------------------------------------------------------------------------"
