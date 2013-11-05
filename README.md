@@ -38,7 +38,7 @@ ssh -T git@github.com                         # => Hi xxx! ...
 设定postgres的账号密码（例子中用户blog，数据库blog_production）
 
 ```
-sudo -u postgres sql
+sudo -u postgres psql
 postgres=# create user blog with password 'secret'; 
 postgres=# ALTER USER blog WITH SUPERUSER;
 postgres=# create database blog_production owner blog;
