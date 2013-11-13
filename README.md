@@ -16,6 +16,7 @@
 ```bash
 adduser deployer —ingroup sudo
 apt-get install openssh-server
+mkdir /home/deployer/.ssh
 ```
 
 [ 用deployer登入 ]
@@ -29,11 +30,11 @@ source ~/.bashrc && rvm pkg install readline && rvm install 1.9.3 && rvm use 1.9
 ./install_bundler
 ```
 
-设定postgres的账号密码（例子中用户blog，数据库blog_production）
+设定postgres的账号密码（例子中用户xxx，密码yyy，数据库xxx_production）
 
 ```
 sudo -u postgres psql
-postgres=# create user blog with password 'secret'; 
-postgres=# ALTER USER blog WITH SUPERUSER;
-postgres=# create database blog_production owner blog;
+postgres=# create user xxx with password 'yyy'; 
+postgres=# ALTER USER xxx WITH SUPERUSER;
+postgres=# create database xxx_production owner xxx;
 ```
