@@ -1,5 +1,16 @@
 ./install_packages
 ./install_rvm
+
+# install ruby, gemset & rails
+cd ~/
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+rvm install 1.9.3
+rvm gemset create rails3.2
+rvm --default use 1.9.3@rails3.2
+gem install rails -v='3.2.14' --no-rdoc --no-ri # dont install doc to save time...
+
 ./install_nodejs
 ./install_nginx
 ./install_postgres
