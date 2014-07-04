@@ -26,7 +26,7 @@ sudo apt-get install git
 git clone https://github.com/allenfantasy/init.d.git
 cd ./init.d
 ./install_dev_env                             # 如果这一步速度很慢，则执行./replace_mirrors，再重新运行该指令
-source ~/.bashrc && rvm pkg install readline && rvm install 1.9.3 && rvm use 1.9.3 --default
+source ~/.bashrc && rvm pkg install readline && rvm install 2.1.1 && rvm use 2.1.1 --default
 ./install_bundler
 ```
 
