@@ -1,6 +1,3 @@
-echo "Now install Node.js..."
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get -y install nodejs
-echo "Node.js install done."
-echo "------------------------------------------------------------------------"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install 4.4 
