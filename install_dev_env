@@ -1,17 +1,9 @@
 ./install_packages
 ./install_rvm
 
-# install ruby, gemset & rails
-cd ~/
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#sed -i 's!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
 
-echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
-sed -i 's!cache.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
-
-rvm install 2.1.1
-gem install rails -v='4.1.4' --no-rdoc --no-ri # dont install doc to save time...
-
+./install_ruby
 ./install_nodejs
 ./install_nginx
 ./install_postgres

@@ -1,0 +1,3 @@
+. "$HOME/.rvm/scripts/rvm"
+rvm install 2.1.1
+gem install rails -v='4.2.1' --no-rdoc --no-ri # dont install doc to save time...
